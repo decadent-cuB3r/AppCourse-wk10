@@ -1,15 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { Center, NativeBaseProvider } from 'native-base';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
+import HomeScreen from "./src/screens/HomeScreen";
 
-export default function App() {
+// Wrap whole screen in a provider
+const App = () => {
   return (
-      <NativeBaseProvider>
-        <Center>
-          <Text>Hello Redux</Text>
-        </Center>
-      </NativeBaseProvider>
+    <Provider store={store}>
+      <HomeScreen />
+    </Provider>
   );
-}
+};
 
-
+export default App;
